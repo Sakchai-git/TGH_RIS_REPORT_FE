@@ -1,0 +1,32 @@
+<!-- begin::Item -->
+<div class="d-flex align-items-center bg-light-{{classColor}} rounded p-5 mb-7"
+[ngClass]="{'bg-light-focus':reportFocus === reportShortName}">
+  <!-- begin::Icon -->
+  <span class="svg-icon svg-icon-{{classColor}} me-5">
+    <span [inlineSVG]="icon" class="svg-icon svg-icon-1"></span>
+  </span>
+  <!-- end::Icon -->
+  <!-- begin::Title -->
+  <div class="flex-grow-1 me-2">
+     <a class="fw-bolder text-gray-800 text-hover-primary fs-6">
+      {{reportName}}
+    </a>
+    <span class="text-muted fw-bold d-block">({{reportShortName}})</span>
+  </div>
+  <!-- end::Title -->
+  <!-- begin::Lable -->
+  <span class="fw-bolder text-{{classColor}} py-1 me-5">
+    <app-branch [(branch)]="branch" [(dataBranch)]="dataBranch"></app-branch>
+
+  </span>
+  <span class="fw-bolder text-{{classColor}} py-1 me-5">
+    <app-month-picker #monthPicker [(fromDate)]="fromDate" [(toDate)]="toDate"></app-month-picker>
+
+  </span>
+
+  <span class="fw-bolder text-{{classColor}} py-1">
+    <app-download #download [(date)]="date" [reportName]="reportName" [reportShortName]="reportShortName" (onEventClick)="downloadClick($event)"></app-download>
+  </span>
+  <!-- end::Lable -->
+</div>
+<!-- end::Item -->

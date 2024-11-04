@@ -1,0 +1,11 @@
+<a href="javascript:;" (click)="downloadClick($event)" class="svg-icon">
+  <ng-container *ngIf="isLoading$ | async">
+    <span class="indicator-progress" [style.display]="'block'">
+
+      <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+    </span>
+  </ng-container>
+  <ng-container *ngIf="(isLoading$ | async) === false">
+    <span [inlineSVG]="'./assets/media/icons/duotune/files/icons8-microsoft-excel-2019.svg'" class="svg-icon svg-icon-1"></span>
+  </ng-container>
+</a>

@@ -1,0 +1,50 @@
+:host {
+  width: 100%;
+  @media (min-width: 992px) {
+    .login-form {
+      width: 100%;
+      max-width: 450px;
+
+      .mat-form-field {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.login-block {
+  .login-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 2px #5aad24;
+    padding-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    .login-logo {
+      width: 42%;
+    }
+    .login-caption {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0;
+      color: #5cac26;
+      background: -webkit-linear-gradient(#5cac26, #2c7867);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .btn-login {
+    font-size: 1.25rem;
+    font-weight: 600;
+    background: linear-gradient(
+      135deg,
+      rgba(79, 173, 38, 1) 0%,
+      rgba(8, 76, 142, 1) 100%
+    );
+
+    &:hover {
+      background: linear-gradient(135deg, rgb(57 126 27) 0%, rgb(5 50 94) 100%);
+    }
+  }
+}

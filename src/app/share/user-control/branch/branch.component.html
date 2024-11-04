@@ -1,0 +1,14 @@
+<!-- <ng-select2
+	[(ngModel)]="branch"
+	[data]="data"
+  width="100" [options]="{theme:'bootstrap-5'}"
+	[placeholder]="'Please select a fruit...'">
+</ng-select2> -->
+<!-- <select class="form-select" data-control="select2" data-placeholder="Select an option">
+  <option></option>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+</select> -->
+<dx-select-box placeholder="Branch..." [width]="200" [searchEnabled]="true" [showClearButton]="false" [(value)]="branch"
+  [disabled]="(currentBranch$ |async)?.length <= 1" [dataSource]="currentBranch$ |async" valueExpr="abbR_NAME"
+  displayExpr="companY_NAME" [(selectedItem)]="dataBranch"></dx-select-box>

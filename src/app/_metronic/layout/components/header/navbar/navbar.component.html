@@ -1,0 +1,30 @@
+<!--begin::User menu-->
+<ng-container *ngIf="user$ | async as _user">
+  <div class="app-navbar-item" [ngClass]="itemClass">
+    <!--begin::Menu wrapper-->
+    <div class="symbol">
+      <div class="d-flex flex-column">
+        <div class="fw-bolder d-flex align-items-center fs-5">
+          {{ _user.firstName }} {{ _user.lastName }}
+        </div>
+        <a class="fw-bold text-muted text-hover-primary fs-7">
+          สาขา {{ _user.companyName }}
+        </a>
+      </div>
+    </div>
+    <!--end::Menu wrapper-->
+  </div>
+</ng-container>
+<!--end::User menu-->
+
+<!--begin::User menu-->
+<div class="app-navbar-item" [ngClass]="itemClass">
+  <!--begin::Menu wrapper-->
+  <div class="cursor-pointer symbol" [ngClass]="userAvatarClass" data-kt-menu-trigger="{default: 'click'}"
+    data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+    <img src="./assets/media/avatars/blank.png" />
+  </div>
+  <app-user-inner data-kt-menu='true'></app-user-inner>
+  <!--end::Menu wrapper-->
+</div>
+<!--end::User menu-->
